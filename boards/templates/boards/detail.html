@@ -1,0 +1,13 @@
+{% extends 'boards/base.html' %}
+{% block body %}
+    <h1>Detail</h1>
+    <h2>{{ board.id }} 번째 글</h2>
+    <hr>
+    <h2>{{ board.title }}</h2>
+    <p>{{ board.content }}</p>
+    <p>생성 : {{ board.created_at | timesince }}전</p>
+    <p>최근 수정 : {{ board.updated_at | timesince }}전</p>
+    <a href="{% url 'boards:index' %}">BACK</a>
+    <a href="{% url 'boards:edit' board.pk %}">[수정]</a>
+    <a href="{% url 'boards:delete' board.pk %}" onclick="return confirm('R U sure?')">[삭제]</a>
+{% endblock %}
