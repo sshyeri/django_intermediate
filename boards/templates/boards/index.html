@@ -1,5 +1,6 @@
 {% extends 'boards/base.html' %}
 {% block body %}
+    <h1>INDEX</h1>
     <a href="{% url 'boards:new' %}">글 작성하기</a>
     <hr>
     {% for board in boards %}
